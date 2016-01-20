@@ -1,0 +1,28 @@
+@media screen and (max-width: 1045px) {
+	.container { max-width:inherit; width:95%;}
+}
+@media screen and (max-width: 991px) {
+	.left-address { width:100%; text-align:center;}
+	.left-address p { text-align:center;}
+	.left-address p br { display:none;}
+	.logo { width:100%; margin:25px 0;}
+	.right-date { width:100%; margin:0px;}
+	.right-date span { text-align:center; width:100%;}
+	.map-img { width:100%;}
+	.map-detail-listing { width:100%; margin-top:20px;}
+	.hotel-image { width:120px;}
+	.graph-left { width:100%; padding-right:0px;}
+	.graph-detail-right { width:100%; padding-left:0px; margin-top:20px;}
+}
+@media screen and (max-width: 768px) {
+	.container { width:93%;}
+	.map-detail-left { width:100%; margin-top:20px;}
+	.map-detail-right { width:100%; margin-top:20px;}
+	.map-detail-left ul { width:100%;}
+	.map-detail-right ul { float:left; width:100%;}
+	.left-tabel { width:100%; padding-right:0px;}
+	.right-tabel { width:100%; padding-left:0px; margin-top:30px;}
+}
+@media screen and (max-width: 340px) {
+	.price-table tr td { padding:14px 16px;}
+}

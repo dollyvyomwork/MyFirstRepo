@@ -1,0 +1,46 @@
+﻿@model RealEststeRelar.Models.PropAlg
+<link href="~/Content/css/theme.css" rel="stylesheet" />
+
+<script src="~/Content/js/jquery-1.11.3.min.js"></script>
+<script src="~/Content/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<div class="container">
+    <div class="map-head">
+        <h2>@ViewBag.RelarAnalysisTitle</h2>
+        @if (Model.Regression != null)
+        {
+            <div>
+                <h3>Price Regression Component Calculated From Properties in this List: </h3>
+                <h4>
+                    Regression Price: $@string.Format("{0:N}", Convert.ToDecimal(@Model.Regression.Price)).ToString().TrimEnd('0').TrimEnd('.') <br />
+                    Regression Range: $@string.Format("{0:N}", Convert.ToDecimal(@Model.Regression.Range)).ToString().TrimEnd('0').TrimEnd('.')<br />
+                </h4>
+            </div>
+        }
+        <div class="left-tabell">
+            <table cellspacing="0" cellpadding="0" class="price-tableip">
+                <colgroup>
+                    <col width="15%">
+                    <col width="20%">
+                    <col width="10%">
+                    <col width="5%">
+                    <col width="5%">
+                    <col width="10%">
+                    <col width="5%">
+                    <col width="5%">
+                    <col width="10%">
+                    <col width="5%">
+                    <col width="5%">
+                </colgroup>
+                @if (ViewBag.IsWithSpecs)
+                {
+                    @Html.Partial("_PropWithSpecPartial");
+                }
+                else
+                {
+                    @Html.Partial("_PropWithoutSpecPartial");
+                }
+            </table>
+        </div>
+    </div>
+</div>

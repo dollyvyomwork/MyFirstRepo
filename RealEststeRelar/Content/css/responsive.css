@@ -1,0 +1,57 @@
+@media screen and (max-width: 1045px) {
+	.container { max-width:inherit; width:95%;}
+}
+@media screen and (max-width: 991px) {
+	.left-address { width:100%; text-align:center;}
+	.left-address p { text-align:center;}
+	.left-address p br { display:none;}
+	.logo { width:100%; margin:25px 0;}
+	.right-date { width:100%; margin:0px;}
+	.right-date span { text-align:center; width:100%;}
+	.map-img { width:100%;}
+	.map-imgip { width:70%;}
+	.map-detail-listing { width:100%; margin-top:20px;}
+	.hotel-image { width:54px;}
+	.graph-left { width:100%; padding-right:0px;}
+	.graph-detail-right { width:100%; padding-left:0px; margin-top:20px;}
+	.mapipside-image{ width:30%;}
+	.color-table{float:left;width:100%; border:1px solid #c9c9c9; background:#fff;border-bottom:none;}
+	.imgl-left {width:100%;}
+	.imgl-left >img { max-width:50%; display:block; height:auto; float:left; padding-right:5px;}
+	.imgl-detail-right { width:50%; padding:10px; 0px;}
+	.left-tabelipp{float:left; width:100%; padding-right:0px;}
+	.right-tabelipp { float:left; width:100%; padding:10px 0 0 0;}
+}
+@media screen and (max-width: 768px) {
+	.container { width:93%;}
+	.map-detail-left { width:100%; margin-top:20px;}
+	.map-detail-right { width:100%; margin-top:20px;}
+	.map-detail-rightip { width:100%; margin-top:10px;}
+	.map-detail-left ul { width:100%;}
+	.map-detail-right ul { float:left; width:100%;}
+	.map-detail-rightip ul { float:left; width:100%;}
+	.map-imgip { width:100%;}
+	.left-tabel { width:100%; padding-right:0px;}
+	.left-tabelip { width:100%; padding-right:0px;}
+	.left-tabell { width:100%; padding-right:0px;}
+	.right-tabel { width:100%; padding-left:0px; margin-top:30px;}
+	.mapipside-image{ width:10%;}
+	.imgl-left {width:100%;}
+	.imgl-left >img { max-width:50%; display:block; height:auto; float:left; padding-right:5px;}
+	.imgl-detail-right { width:50%; padding:10px; 0px;}
+	.left-tabelipp{float:left; width:100%; padding-right:0px;}
+}
+@media screen and (max-width: 650px) and (min-width: 450px){
+
+	.mapipside-image{ width:15%;}
+	.imgl-left {width:100%;}
+	.imgl-left >img { max-width:50%; display:block; height:auto; float:left; padding-right:5px;}
+	.imgl-detail-right { width:50%; padding:10px 10px 10px 0;}
+}
+@media screen and (max-width: 449px) {
+	.price-table tr td { padding:14px 16px;}
+	.mapipside-image{ width:20%;}
+	.imgl-left {width:100%;}
+	.imgl-left >img { max-width:100%; display:block; height:auto;}
+	.imgl-detail-right { width:100%; padding:10px; 0px;}
+}

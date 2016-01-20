@@ -1,0 +1,177 @@
+﻿@using RealEststeRelar.Models
+@model PropQuery
+@{
+    if (Model != null)
+    {
+        <div class="container">
+            <div class="map-head">
+                <h2><b style="text-transform:none;">Summary</b> of Price Regression Components</h2>
+                <div class="left-tabell">
+                    <table cellspacing="0" cellpadding="0" class="price-table">
+                        <colgroup>
+                            <col width="26%">
+                            <col width="12%">
+                            <col width="12%">
+                            <col width="26%">
+                            <col width="12%">
+                            <col width="12%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>Past Time Components</th>
+                                <th>Price</th>
+                                <th>Range (+/-)</th>
+                                <th>Predictive Components</th>
+                                <th>Price</th>
+                                <th>Range (+/-)</th>
+                            </tr>
+                            <tr>
+                                <td>Six Month Component</td>
+                                <td>$@string.Format("{0:N2}",Model.HouseWorthVal.value6Month)</td>
+                                <td>$@string.Format("{0:N2}",Model.HouseWorthErr.value6Month)</td>
+                                <td>Pending Listings Component</td>
+                                <td>$@string.Format("{0:N2}",Model.HouseWorthVal.valuePending)</td>
+                                <td>$@string.Format("{0:N2}",Model.HouseWorthErr.valuePending)</td>
+                            </tr>
+                            <tr>
+                                <td>Three Month Component</td>
+                                <td>$@string.Format("{0:N2}",Model.HouseWorthVal.value3Month)</td>
+                                <td>$@string.Format("{0:N2}",Model.HouseWorthErr.value3Month)</td>
+                                <td>Active Listings Component</td>
+                                <td>$@string.Format("{0:N2}",Model.HouseWorthVal.valueActive)</td>
+                                <td>$@string.Format("{0:N2}",Model.HouseWorthErr.valueActive)</td>
+                            </tr>
+                            <tr>
+                                <td>Current Month Component</td>
+                                <td>$@string.Format("{0:N2}",Model.HouseWorthVal.value)</td>
+                                <td>$@string.Format("{0:N2}",Model.HouseWorthErr.value)</td>
+                                <td>Expired Listings Component</td>
+                                <td>$@string.Format("{0:N2}",Model.HouseWorthVal.valueExpired)</td>
+                                <td>$@string.Format("{0:N2}",Model.HouseWorthErr.valueExpired)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="relar-price">
+            <div class="container">
+                <div class="relar-price-head">
+                    <h2><b style="text-transform:none;">Summary</b> List of Comparable Sales</h2>
+                </div>
+                <div class="map-imgip"> <img src="~/Content/images/map_ip.png" width="1000" height="386" alt="" /> </div>
+                <div class="map-detail-rightip">
+                    <ul class="ip-detail-rightip">
+                        <li>
+                            <div class="mapipside-image"> <img src="~/Content/images/home.png" alt="" /> </div>
+                            <div class="ip-details-list-map">
+                                <h4>434 W PENTAGON ST</h4>
+                                <label>$547,140</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mapipside-image"> <img src="~/Content/images/home01.png" alt="" class="mapipside-imageh" /> </div>
+                            <div class="ip-details-list-map">
+                                <h4>452 W PALM ST</h4>
+                                <label>$520,000</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mapipside-image"> <img src="~/Content/images/home02.png" alt="" class="mapipside-imageh" /> </div>
+                            <div class="ip-details-list-map">
+                                <h4>452 W PALM ST</h4>
+                                <label>$520,000</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mapipside-image"> <img src="~/Content/images/home03.png" alt="" class="mapipside-imageh" /> </div>
+                            <div class="ip-details-list-map">
+                                <h4>452 W PALM ST</h4>
+                                <label>$520,000</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mapipside-image"> <img src="~/Content/images/home04.png" alt="" class="mapipside-imageh" /> </div>
+                            <div class="ip-details-list-map">
+                                <h4>452 W PALM ST</h4>
+                                <label>$520,000</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mapipside-image"> <img src="~/Content/images/home05.png" alt="" class="mapipside-imageh" /> </div>
+                            <div class="ip-details-list-map">
+                                <h4>452 W PALM ST</h4>
+                                <label>$520,000</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="property_information">
+            <div class="container">
+
+                <div class="left-tabelip">
+                    <h2>
+                        Summary of Items
+                        Affecting Confidence Score
+                    </h2>
+                </div>
+                <div class="right-tabelip">
+                    <ul class="right-tabelip-rightip">
+                        <li>
+                            <div class="mappipside-image"> <img src="~/Content/images/arrow.png" alt="" /> </div>
+                            <div class="ip-details-listip">
+                                <h4><b>Items Common to All Property Lists</b></h4>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mappipside-image"> <img src="~/Content/images/arrow.png" alt="" /> </div>
+                            <div class="ip-details-listip">
+                                <h4><b>Items Affecting Current Price Regression</b></h4>
+
+                                @if (Model.ConfidenceScoreListCurrent != null)
+                                {
+                                    foreach (var item in Model.ConfidenceScoreListCurrent.ConfidenceScoreItems)
+                                    {
+                                        <label>@item.Code: @item.Message</label>
+                                    }
+                                }
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mappipside-image"> <img src="~/Content/images/arrow.png" alt="" /> </div>
+                            <div class="ip-details-listip">
+                                <h4><b>Items Affecting Three Month Price Regression</b></h4>
+
+                                @if (Model.ConfidenceScoreListThree != null)
+                                {
+                                    foreach (var item in Model.ConfidenceScoreListThree.ConfidenceScoreItems)
+                                    {
+                                        <label>@item.Code: @item.Message</label>
+                                    }
+                                }
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mappipside-image"> <img src="~/Content/images/arrow.png" alt="" /> </div>
+                            <div class="ip-details-listip">
+                                <h4><b>Items Affecting Six Month Price Regression</b></h4>
+
+                                @if (Model.ConfidenceScoreListSix != null)
+                                {
+                                    foreach (var item in Model.ConfidenceScoreListSix.ConfidenceScoreItems)
+                                    {
+                                        <label>@item.Code: @item.Message</label>
+                                    }
+                                }
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      @Html.ActionLink("Next Page", "PropertiesSearched", "Home")
+    }
+}

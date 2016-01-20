@@ -1,0 +1,53 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Relar</title>
+   
+    <link href="~/Content/css/theme.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/Content/js/jquery-1.11.3.min.js"></script>
+    <script src="~/Content/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+</head>
+<body>
+    <script>
+        (function ($) {
+            $(window).load(function () {
+
+                $("a[rel='load-content']").click(function (e) {
+                    e.preventDefault();
+                    var url = $(this).attr("href");
+                    $.get(url, function (data) {
+                        $(".content .mCSB_container").append(data); //load new content inside .mCSB_container
+                        //scroll-to appended content
+                        $(".content").mCustomScrollbar("scrollTo", "h2:last");
+                    });
+                });
+
+                $(".content").delegate("a[href='top']", "click", function (e) {
+                    e.preventDefault();
+                    $(".content").mCustomScrollbar("scrollTo", $(this).attr("href"));
+                });
+
+            });
+        })(jQuery);
+    </script>
+    <div class="header">
+        <div class="container">
+            <!--Call Child Action for Header-->
+            @Html.Action("Header", "Home");
+        </div>
+    </div>
+    <div class="section">
+        @RenderBody()
+    </div>
+
+   
+    @RenderSection("scripts", required: false)
+</body>
+</html>

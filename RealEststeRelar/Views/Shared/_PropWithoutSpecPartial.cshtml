@@ -1,0 +1,33 @@
+﻿@model RealEststeRelar.Models.PropAlg
+<tbody>
+    <tr>
+        <th>APN</th>
+        <th>Street Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>Price</th>
+        <th>Beds</th>
+        <th>Baths</th>
+        <th>Date</th>
+        <th>Size</th>
+        <th style="border-right:none">Dist(mi)</th>
+    </tr>
+    @foreach (var p in @Model.Props)
+    {
+        <tr>
+            <td>@p.APN</td>
+            <td>@p.Address</td>
+            <td>@p.City</td>
+            <td>@p.State</td>
+            <td>@p.Zip</td>
+            <td>$@string.Format("{0:N}", Convert.ToDecimal(p.Price)).ToString().TrimEnd('0').TrimEnd('.')</td>
+            <td>@p.Beds</td>
+            <td>@p.Baths</td>
+            <td>@p.Date</td>
+            <td>@p.Sq_Ft</td>
+            <td style="border-right:none">@p.Dist</td>
+        </tr>
+    }
+</tbody>
+
