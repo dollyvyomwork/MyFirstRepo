@@ -1,2 +1,0 @@
-D:\Dolly\Projects\RealEststeRelar\RealEststeRelar.Tests\obj\Debug\RealEststeRelar.Tests.csprojResolveAssemblyReference.cache
-D:\Projects\RealEststeRelar\RealEststeRelar\RealEststeRelar.Tests\obj\Debug\RealEststeRelar.Tests.csprojResolveAssemblyReference.cache
