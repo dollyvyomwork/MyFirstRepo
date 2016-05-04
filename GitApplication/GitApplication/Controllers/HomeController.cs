@@ -11,8 +11,13 @@ namespace GitApplication.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Your application Index page.";
+<<<<<<< HEAD
             ViewBag.Message = "navigation to create and edit pages";
             ViewBag.Message = "Show List of items";
+=======
+            ViewBag.Message = "Links to navigate to create and edit pages";
+            ViewBag.Message = "Show Listings";
+>>>>>>> newbranch1
 
 
             return View();
